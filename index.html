@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Moonscanner </title>
+    <!-- font-awesome-cdn-link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.2/css/all.min.css" 
+    integrity="sha512-g0gRzvKX9GBUbjlJZ02n2GLRJVabgLm6b3oypbkF6ne1T2+ZHCucKRd8qt31a3BCGahAlBmXUDS7lu2pYuWB7A==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- main-css-file -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- header -->
+    <header class="main-padd">
+        <div class="container text-white flex">
+            <a href="index.html" class="site-brand flex">
+                <i class="fas fa-moon"></i>
+                <h2> Moonnscanner </h2>
+            </a>
+            <nav class="flex">
+                <i class="fas fa-globe"></i>
+                <i class="fas fa-heart"></i>
+                <div class="log">
+                    <i class="fas fa-user"></i>
+                    <span> Log in </span>
+                </div>
+                
+                <i class="fas fa-bars"></i>
+            </nav>
+        </div>
+    </header>
+    <!-- main -->
+    <main class="text-white main-padd">
+        <h1 class="main-header"> Millions of cheap flights. One simple search.</h1>
+        <div class="btns text-white">
+            <button class="text-white active"> Flights </button>
+            <button class="text-white"> Hotels </button>
+            <button class="text-white"> Car Hire </button>
+        </div>
+        <div class="search-fields flex-merely">
+            <div class="parent flex-merely">
+                <div class="search-field">
+                    <input type="search" placeholder="Country,city or airport">
+                    <p class="text-in-input"> From </p>
+                </div>
+                <div class="search-field">
+                    <input type="search" placeholder="Country,city or airport">
+                    <p class="text-in-input"> To </p>
+                </div>
+                <div class="left-right-arrows flex-merely">
+                    <i class="fas fa-arrow-right"></i>
+                    <i class="fas fa-arrow-left"></i>
+                </div>
+                <div class="search-suuggst">
+                    <div class="search-suuggst-container flex-merely">
+                        <i class="fas fa-plane"></i>
+                        <div class="dest">
+                            <div class="top">
+                                <span> Brisbane </span>
+                                <span> (BNE) </span>
+                            </div>
+                            <div class="bottom">
+                                <p> Australia </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="parent flex-merely">
+                <div class="search-field">
+                    <input type="search" placeholder="Add date">
+                    <p class="text-in-input"> Depart </p>
+                </div>
+                <div class="search-field">
+                    <input type="search" placeholder="Add date">
+                    <p class="text-in-input"> Return </p>
+                </div>
+                <div class="date-parent">
+                    <div class="upper">
+                        <button class="return-btn flex">
+                            <span> Return </span>
+                            <i class="fas fa-arrow-down"></i>
+                        </button>
+                        <div class="dates-btns flex-merely">
+                            <button class="active"> Specific Dates </button>
+                            <button> Flexible Dates </button> 
+                        </div>
+                    </div>
+                    <div class="month-pick">
+                        <div class="arrows">
+                            <i class="fas fa-arrow-left arrow-left"></i>
+                            <i class="fas fa-arrow-right arrow-right"></i>
+                        </div>
+                        <div class="date-container flex">
+                            <table class="current">
+                                <caption> April </caption>
+                                <thead>
+                                    <tr>
+                                        <th> S </th>
+                                        <th> M </th>
+                                        <th> T </th>
+                                        <th> W </th>
+                                        <th> T </th>
+                                        <th> F </th>
+                                        <th> S </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td> 1 </td>
+                                        <td> 2 </td>
+                                        <td> 3 </td>
+                                        <td> 4 </td>
+                                        <td> 5 </td>
+                                        <td> 6 </td>
+                                        <td> 7 </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 8 </td>
+                                        <td> 9 </td>
+                                        <td> 10 </td>
+                                        <td> 11 </td>
+                                        <td> 12 </td>
+                                        <td> 13 </td>
+                                        <td> 14 </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 15 </td>
+                                        <td> 16 </td>
+                                        <td> 17 </td>
+                                        <td> 18 </td>
+                                        <td> 19 </td>
+                                        <td> 20 </td>
+                                        <td> 21 </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 22 </td>
+                                        <td> 23 </td>
+                                        <td> 24 </td>
+                                        <td> 25 </td>
+                                        <td> 26 </td>
+                                        <td> 27 </td>
+                                        <td> 28 </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 29 </td>
+                                        <td> 30 </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="next">
+                                <caption> May </caption>
+                                <thead>
+                                    <tr>
+                                        <th> S </th>
+                                        <th> M </th>
+                                        <th> T </th>
+                                        <th> W </th>
+                                        <th> T </th>
+                                        <th> F </th>
+                                        <th> S </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td> 1 </td>
+                                        <td> 2 </td>
+                                        <td> 3 </td>
+                                        <td> 4 </td>
+                                        <td> 5 </td>
+                                        <td> 6 </td>
+                                        <td> 7 </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 8 </td>
+                                        <td> 9 </td>
+                                        <td> 10 </td>
+                                        <td> 11 </td>
+                                        <td> 12 </td>
+                                        <td> 13 </td>
+                                        <td> 14 </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 15 </td>
+                                        <td> 16 </td>
+                                        <td> 17 </td>
+                                        <td> 18 </td>
+                                        <td> 19 </td>
+                                        <td> 20 </td>
+                                        <td> 21 </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 22 </td>
+                                        <td> 23 </td>
+                                        <td> 24 </td>
+                                        <td> 25 </td>
+                                        <td> 26 </td>
+                                        <td> 27 </td>
+                                        <td> 28 </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 29 </td>
+                                        <td> 30 </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="bottom flex">
+                        <p> Search for return </p>
+                        <button class="apply-btn"> Apply </button>
+                    </div>
+                </div>
+            </div>
+            <div class="parent">
+                <div class="search-field">
+                    <input type="search" placeholder="1 Adult, Econonmy">
+                    <p class="text-in-input"> Travellers and cabin class </p>
+                </div>
+                <div class="trav">
+                    <h3> Cabin class </h3>
+                    <div class="med">
+                        <div class="adult flex">
+                            <div class="adult-left">
+                                <h3> Adult </h3>
+                                <p> Aged 16+ </p>
+                            </div>
+                            <div class="adult-right flex">
+                                <button> - </button>
+                                <p class="num"> 1 </p>
+                                <button> + </button>
+                            </div>
+                        </div>
+                        <div class="child flex">
+                            <div class="child-left">
+                                <h3> Children </h3>
+                                <p> Aged 0 to 15 </p>
+                            </div>
+                            <div class="child-right flex">
+                                <button> - </button>
+                                <p class="num"> 0 </p>
+                                <button> + </button>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        Your age at time of travel must be valid for the age category booked. Airlines have restrictions on under 18s 
+                        travelling alone.
+                    </p>
+                </div>
+            </div>
+            <button class="search-btn"> Search </button>
+        </div>
+    </main>
+    <!-- main-js-file -->
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>
