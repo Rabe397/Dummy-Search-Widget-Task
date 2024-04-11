@@ -114,7 +114,7 @@ main{
 .parent.flex-merely , .search-fields.flex-merely{
     gap: 4px;
 }
-.search-suuggst{
+.search-suggst , .search-suggst.two{
     position: absolute;
     top: 71px;
     left: 0;
@@ -125,8 +125,24 @@ main{
     border-radius: 10px;
     display: none;
 }
-.search-suuggst-container.flex-merely{
+.search-suggst-container{
+    margin-bottom: 25px;
+    padding: 5px;
+}
+.search-suggst-container:hover{
+    background-color: rgb(216, 213, 213);
+}
+.search-suggst-container.flex-merely{
     gap: 15px;
+}
+.search-suggst.two{
+    left: 50%; 
+}
+.dest .city{
+    cursor: pointer;
+}
+.dest .bottom{
+    margin-top: 10px;
 }
 .left-right-arrows{
     background-color: white;

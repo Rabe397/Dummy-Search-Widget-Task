@@ -39,22 +39,22 @@
             <button class="text-white"> Hotels </button>
             <button class="text-white"> Car Hire </button>
         </div>
-        <div class="search-fields flex-merely">
+        <form class="search-fields flex-merely">
             <div class="parent flex-merely">
                 <div class="search-field">
-                    <input type="search" placeholder="Country,city or airport">
+                    <input type="search" class="dest-search" placeholder="Country,city or airport">
                     <p class="text-in-input"> From </p>
                 </div>
                 <div class="search-field">
-                    <input type="search" placeholder="Country,city or airport">
+                    <input type="search" class="dest-search" placeholder="Country,city or airport">
                     <p class="text-in-input"> To </p>
                 </div>
                 <div class="left-right-arrows flex-merely">
                     <i class="fas fa-arrow-right"></i>
                     <i class="fas fa-arrow-left"></i>
                 </div>
-                <div class="search-suuggst">
-                    <div class="search-suuggst-container flex-merely">
+                <div class="search-suggst">
+                    <!-- <div class="search-suggst-container flex-merely">
                         <i class="fas fa-plane"></i>
                         <div class="dest">
                             <div class="top">
@@ -63,9 +63,23 @@
                             </div>
                             <div class="bottom">
                                 <p> Australia </p>
-                            </div>
+                            </div> 
                         </div>
-                    </div>
+                    </div> -->
+                </div>
+                <div class="search-suggst two">
+                    <!-- <div class="search-suggst-container flex-merely">
+                        <i class="fas fa-plane"></i>
+                        <div class="dest">
+                            <div class="top">
+                                <span> Brisbane </span>
+                                <span> (BNE) </span>
+                            </div>
+                            <div class="bottom">
+                                <p> Australia </p>
+                            </div> 
+                        </div>
+                    </div> -->
                 </div>
             </div>
             <div class="parent flex-merely">
@@ -253,9 +267,9 @@
                 </div>
             </div>
             <button class="search-btn"> Search </button>
-        </div>
+        </form>
     </main>
     <!-- main-js-file -->
-    <script type="module" src="js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
