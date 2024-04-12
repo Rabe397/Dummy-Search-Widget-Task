@@ -8,7 +8,9 @@ a{
     text-decoration: none;
     color: unset
 }
-
+li{
+    list-style: none;
+}
 /* common */
 .main-padd{
     padding: 0 8rem;
@@ -36,7 +38,6 @@ header{
     top: 0;
     left: 0;
     right: 0;
-    height: 60px;
 }
 .container{
     padding: 15px 0;
@@ -48,16 +49,16 @@ nav.flex{
     gap: 15px;
 }
 .log span{
-    margin-left: 3px;
+    margin-left: 6px;
 }
 
 /* main */
 main{
-    margin-top: 60px;
+    margin-top: 45px;
     background-color: var(--main-color);
     height: 90vh;
 }
-.main-header{
+.main-heading{
     padding-top: 60px;
 }
 .btns{
@@ -85,7 +86,11 @@ main{
 } 
 .search-field input{
     height: 100%;
-    padding: 35px 20px 10px 30px;
+    padding: 35px 25px 10px 0px;
+}
+.search-field input::placeholder{
+    padding-left: 25px;
+    text-overflow: ellipsis;
 }
 .search-fields:nth-child(1) input{
     border-top-left-radius: 10px;
@@ -98,7 +103,7 @@ main{
 .text-in-input{
     position: absolute;
     top: 10px;
-    left: 30px;
+    left: 25px;
     z-index: 5;
     color: black;
 }
@@ -215,6 +220,14 @@ main{
 .arrow-left , .arrow-right{
     position: absolute;
     top: o;
+    height: 30px;
+    width: 30px;
+    border-radius:50%;
+    background-color: green;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .arrow-left{
     left: 0;
@@ -222,20 +235,28 @@ main{
 .arrow-right{
     right: 0;
 }
+.stoped{
+    color: rgb(172, 170, 170);
+    background-color: rgb(241, 240, 240);
+}
 .date-container .current , .date-container .next{
     width: 45%;
 }
-table caption{
+.month{
     margin-bottom: 20px;
-    font-weight: 800;
-    font-size: 1.1rem;
+    text-align: center;
+}
+.days-of-week , .month-days{
+    display: grid;
+    grid-template-columns: repeat(7 ,1fr);
+    text-align: center;
 } 
-td{
-    text-align: center
+.month-days li{
+    margin: 10px 0px;
 }
-.date-parent hr{
-    margin: 20px 0px; 
-}
+.inactive{
+    color: rgb(204, 201, 201);
+} 
 .apply-btn{
     background-color: green;
     color: white;
@@ -251,6 +272,7 @@ td{
     width: 200%;
     padding: 15px;
     border-radius: 10px;
+    display: none;
 }
 .trav .med{
     margin: 30px 0;
@@ -265,4 +287,51 @@ td{
 }
 .trav .med .num{
     margin: 0 10px;
+}
+
+/* media-query */
+@media(max-width:1440px){
+    /* common */
+    .main-padd{
+        padding: 0 2rem;
+    }
+    /* main */
+    .search-field input{
+        padding: 35px 0px 10px 0px;
+    }
+    .search-field input::placeholder{
+        font-size: 0.7rem;
+    }
+    .text-in-input{
+        font-size: 0.8rem;
+    }
+}
+@media(max-width:425px){
+    /* common */
+    .main-padd{
+        padding: 0 1rem;
+    }
+    /* header */
+    .globe , .log-in{
+        display: none;
+    }
+    /* main */
+    .main-heading{
+        font-size: 1.6rem;
+    }
+}
+@media(max-width:320px){
+    /* header */
+    .site-brand h2{
+        font-size: 1rem;
+    }
+    header .container i{
+        font-size: 0.6rem;
+    }
+    /* main */
+    .btns button{
+        padding: 5px;
+        border-radius: 3px;
+        font-size: 0.8rem;
+    }
 }
