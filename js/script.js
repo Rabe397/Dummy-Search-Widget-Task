@@ -87,7 +87,6 @@ const renderCalender = ()=>{
     let lastDateOfLastMonth = new Date(currYear,currMonth, 0).getDate(); //get last Day of prev month
     currentMonthDays.innerHTML = "";
 
-    
     // previous month last days
     for(let x = firstDaysOfMonth ; x > 0 ; x--){
         currentMonthDays.innerHTML += `<li class="inactive"> ${lastDateOfLastMonth - x + 1} </li>`
@@ -95,7 +94,10 @@ const renderCalender = ()=>{
 
     // all days of current month
     for(let x = 1 ; x <= lastDateOfMonth ; x++){
-        currentMonthDays.innerHTML += `<li> ${x} </li>`
+        // adding active class to current day
+        let isToday = x === date.getDate() && currMonth === new Date().getMonth()
+        && currYear === new Date().getFullYear() ? "active" : "";
+        currentMonthDays.innerHTML += `<li class="${isToday}"> ${x} </li>`
     }
 
     // next month first days
@@ -103,23 +105,21 @@ const renderCalender = ()=>{
         currentMonthDays.innerHTML += `<li class="inactive"> ${x - lastDaysOfMonth + 1} </li>`
     }
 
-
-    let firstDaysOfMonthNext = new Date(currYear , currMonth , 1).getDay(); // get first day of month
+    let firstDaysOfMonthNext = new Date(currYear , currMonth + 1, 1).getDay(); // get first day of month
     let lastDayOfNextMonth = new Date(currYear , currMonth + 2,0).getDate(); //get last date of month
-    let lastDaysOfMonthNext = new Date(currYear , currMonth  , lastDayOfNextMonth).getDay(); //get last day of month
+    let lastDaysOfMonthNext = new Date(currYear , currMonth + 1 , lastDayOfNextMonth).getDay(); //get last day of month
     let lastDateOfLastMonthNext = new Date(currYear, currMonth + 1, 0).getDate(); //get last Days of prev month
 
-     console.log(lastDaysOfMonthNext)
     nextMonthDays.innerHTML = "";
-
-    // next month all days
-    for(let y = 1 ; y <= lastDayOfNextMonth ; y++){
-        nextMonthDays.innerHTML += `<li> ${y} </li>`
-    }
 
     // previous month last days
     for(let x = firstDaysOfMonthNext ; x > 0 ; x--){
         nextMonthDays.innerHTML += `<li class="inactive"> ${lastDateOfLastMonthNext - x + 1} </li>`
+    }
+
+    // next month all days
+    for(let y = 1 ; y <= lastDayOfNextMonth ; y++){
+        nextMonthDays.innerHTML += `<li> ${y} </li>`
     }
 
     // next month first days
@@ -132,21 +132,26 @@ renderCalender();
 
 // next-prev-arrows
 let minmumMonth = currMonth;
-let maximumMonth = 11
+
 
 nextPrevIcons.forEach((icon)=>{
     icon.addEventListener("click",()=>{
         if(icon.id === "prev" && currMonth > minmumMonth){
             currMonth = currMonth - 1;
             neMonth = neMonth - 1
-            icon.classList.add("stoped");
-        }else if(icon.id === "next" && currMonth <= maximumMonth){
+            // icon.classList.add("stoped");
+        }else if(icon.id === "next" && currMonth <= 11){
             currMonth = currMonth + 1;
             neMonth = neMonth + 1;
-            console.log("go")
-        }else if(icon.id === "next" && currMonth === 12){
-            // 
-            console.log("stop")
+            
+        }
+        if( currMonth < 0|| neMonth > 11){
+            console.log(currMonth, neMonth)
+            date = new Date(currYear,neMonth);
+            currYear = date.getFullYear();
+            currMonth = date.getMonth();
+        }else{
+            date = new Date();
         }
         renderCalender();
     })

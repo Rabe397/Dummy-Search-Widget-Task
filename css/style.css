@@ -178,7 +178,7 @@ main{
     width: 250%;
     border-radius: 10px;
     padding: 15px 0px;
-    display: none;
+    /* display: none; */
 }
 .date-parent .upper{
     position: relative;
@@ -239,12 +239,19 @@ main{
     color: rgb(172, 170, 170);
     background-color: rgb(241, 240, 240);
 }
+.date-container.flex{
+    align-items: flex-start;
+}
 .date-container .current , .date-container .next{
     width: 45%;
 }
 .month{
     margin-bottom: 20px;
     text-align: center;
+}
+.days-of-week h3{
+    height: 30px;
+    width: 30px;
 }
 .days-of-week , .month-days{
     display: grid;
@@ -253,6 +260,16 @@ main{
 } 
 .month-days li{
     margin: 10px 0px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.month-days li.active{
+    background-color: green;
+    color: white;
+    border-radius: 50%;
 }
 .inactive{
     color: rgb(204, 201, 201);
