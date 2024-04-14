@@ -56,7 +56,7 @@ nav.flex{
 main{
     margin-top: 45px;
     background-color: var(--main-color);
-    height: 90vh;
+    height: 300px;
 }
 .main-heading{
     padding-top: 60px;
@@ -86,10 +86,10 @@ main{
 } 
 .search-field input{
     height: 100%;
-    padding: 35px 25px 10px 0px;
+    padding: 35px 25px 10px 20px;
 }
 .search-field input::placeholder{
-    padding-left: 25px;
+    
     text-overflow: ellipsis;
 }
 .search-fields:nth-child(1) input{
@@ -111,7 +111,7 @@ main{
     background-color: rgb(255, 255, 255);
     padding: 22.5px 10px;
     border-radius: 10px;
-    color: green;
+    color: var(--main-color);
 }
 .parent{
     position: relative;
@@ -119,7 +119,7 @@ main{
 .parent.flex-merely , .search-fields.flex-merely{
     gap: 4px;
 }
-.search-suggst , .search-suggst.two{
+.search-suggst{
     position: absolute;
     top: 71px;
     left: 0;
@@ -129,6 +129,8 @@ main{
     padding: 15px;
     border-radius: 10px;
     display: none;
+    border: 1px solid black;
+    z-index: 10;
 }
 .search-suggst-container{
     margin-bottom: 25px;
@@ -149,7 +151,7 @@ main{
 .dest .bottom{
     margin-top: 10px;
 }
-.left-right-arrows{
+.left-right-arrows , .up-down-arrows{
     background-color: white;
     color: black;
     height: 40px;
@@ -158,7 +160,11 @@ main{
     border: 1px solid black;
     position: absolute;
     left: calc(50% - 20px);
-    z-index: 10;
+    z-index: 11;
+}
+.rotate{
+    transform: rotate(180deg);
+    transition: 0.3s;
 }
 .left-right-arrows.flex-merely{
     justify-content: center;
@@ -166,8 +172,9 @@ main{
     flex-direction: column;
     gap: 2px;
 }
-.left-right-arrows i{
+.dest-arrows i{
     font-size: 0.8rem;
+    transition: 0.3s;
 }
 .date-parent{
     position: absolute;
@@ -178,7 +185,12 @@ main{
     width: 250%;
     border-radius: 10px;
     padding: 15px 0px;
-    /* display: none; */
+    display: none;
+    border: 1px solid black;
+}
+.calender-for{
+    text-align: center;
+    margin-bottom: 15px;
 }
 .date-parent .upper{
     position: relative;
@@ -242,6 +254,9 @@ main{
 .date-container.flex{
     align-items: flex-start;
 }
+.date-container .current{
+    padding-left: 30px;
+}
 .date-container .current , .date-container .next{
     width: 45%;
 }
@@ -290,6 +305,7 @@ main{
     padding: 15px;
     border-radius: 10px;
     display: none;
+    border: 1px solid black;
 }
 .trav .med{
     margin: 30px 0;
@@ -310,17 +326,100 @@ main{
 @media(max-width:1440px){
     /* common */
     .main-padd{
-        padding: 0 2rem;
+        padding: 0 1rem;
     }
     /* main */
     .search-field input{
-        padding: 35px 0px 10px 0px;
+        padding-right: 0;
+        width: 160px;
     }
     .search-field input::placeholder{
         font-size: 0.7rem;
     }
     .text-in-input{
         font-size: 0.8rem;
+    }
+}
+@media(max-width:910px){
+    /* common */
+    /* main */
+    .search-field input{
+        padding-right: 0;
+        width: 130px;
+    }
+    .search-field input::placeholder , .text-in-input , .left-right-arrows i , .search-btn {
+        font-size: 0.6rem;
+    }
+    .left-right-arrows{
+        height: 30px;
+        width: 30px;
+        left: calc(50% - 12.5px);
+    }    
+    .search-btn {
+        padding: 25px 7px;
+        border-radius: 6px;
+    }
+}
+@media(max-width: 768px){
+    main{
+        height: auto;
+    }
+    .search-fields.flex-merely , .parent.flex-merely{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .parent , .search-field , .search-field input{
+        width: 100%;
+    }
+    .left-right-arrows{
+        display: none;
+    }
+    .up-down-arrows{
+        font-size: 0.8rem;
+        text-align: center;
+        left: 80%;
+        top: calc(50% - 20px);
+        z-index: 10;
+    }
+    .up-down-arrows.flex-merely {
+        justify-content: center;
+        gap: 3px;
+    }
+    .search-field input::placeholder , .text-in-input , .left-right-arrows i , .search-btn {
+        font-size: 1rem;
+    }   
+    .search-btn {
+        width: 100%;
+        border-radius: 6px;
+    }
+    .search-suggst.two{
+        left: 0%; 
+    }
+    .trav{
+        top: 71px;
+        left: 0%;
+        width: 100%;
+    }
+    .date-parent{
+        left: 0%;
+        width: 100%;
+        z-index: 12;
+        font-size: 0.8rem;
+    }
+    .date-parent .upper{
+        display: none;
+    }
+    .date-container .current {
+        padding-left: 0px;
+    }
+    .date-parent .month-pick, .date-parent .bottom {
+        padding: 0px 10px;
+    }
+    .next{
+        display: none
+    }
+    .date-container .current{
+        width: 100%;
     }
 }
 @media(max-width:425px){

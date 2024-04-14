@@ -42,56 +42,99 @@
         <form class="search-fields flex-merely">
             <div class="parent flex-merely">
                 <div class="search-field">
-                    <input type="search" class="dest-search" placeholder="Country,city or airport">
+                    <input type="search" id="from" class="dest-search" placeholder="Country,city or airport">
                     <p class="text-in-input"> From </p>
                 </div>
                 <div class="search-field">
-                    <input type="search" class="dest-search" placeholder="Country,city or airport">
+                    <input type="search" id="to" class="dest-search" placeholder="Country,city or airport">
                     <p class="text-in-input"> To </p>
                 </div>
-                <div class="left-right-arrows flex-merely">
+                <div class="left-right-arrows dest-arrows flex-merely">
                     <i class="fas fa-arrow-right"></i>
                     <i class="fas fa-arrow-left"></i>
                 </div>
+                <div class="up-down-arrows dest-arrows flex-merely">
+                    <i class="fas fa-arrow-up"></i>
+                    <i class="fas fa-arrow-down"></i>
+                </div>
                 <div class="search-suggst">
-                    <!-- <div class="search-suggst-container flex-merely">
-                        <i class="fas fa-plane"></i>
-                        <div class="dest">
-                            <div class="top">
-                                <span> Brisbane </span>
-                                <span> (BNE) </span>
-                            </div>
-                            <div class="bottom">
-                                <p> Australia </p>
-                            </div> 
-                        </div>
-                    </div> -->
+                    <!-- rendered by js -->
                 </div>
                 <div class="search-suggst two">
-                    <!-- <div class="search-suggst-container flex-merely">
-                        <i class="fas fa-plane"></i>
-                        <div class="dest">
-                            <div class="top">
-                                <span> Brisbane </span>
-                                <span> (BNE) </span>
-                            </div>
-                            <div class="bottom">
-                                <p> Australia </p>
-                            </div> 
-                        </div>
-                    </div> -->
+                    <!-- rendered by js -->
                 </div>
             </div>
             <div class="parent flex-merely">
                 <div class="search-field">
-                    <input type="search" placeholder="Add date">
+                    <input id=""depart" class="calender-input clickable" type="search" placeholder="Add date" readonly>
                     <p class="text-in-input"> Depart </p>
                 </div>
                 <div class="search-field">
-                    <input type="search" placeholder="Add date">
+                    <input id="return" class="calender-input clickable"  type="search" placeholder="Add date" readonly>
                     <p class="text-in-input"> Return </p>
                 </div>
-                <div class="date-parent">
+                <div class="date-parent clic-sun">
+                    <h2 class="calender-for"> Depart </h2>
+                    <div class="upper">
+                        <button class="return-btn flex">
+                            <span> Return </span>
+                            <i class="fas fa-arrow-down"></i>
+                        </button>
+                        <div class="dates-btns flex-merely">
+                            <button class="active"> Specific Dates </button>
+                            <button> Flexible Dates </button> 
+                        </div>
+                    </div>
+                    <div class="month-pick">
+                        <div class="arrows">
+                            <i id="prev" class="fas fa-arrow-left arrow-left"></i>
+                            <i id="next" class="fas fa-arrow-right arrow-right"></i>
+                        </div>
+                        <div class="date-container flex">
+                            <div class="current">
+                                <h2 class="month current-month"> 
+                                    <!-- rendered by js -->
+                                </h2>
+                                <div class="days-of-week">
+                                    <h3> S </h3>
+                                    <h3> M </h3>
+                                    <h3> T </h3>
+                                    <h3> W </h3>
+                                    <h3> T </h3>
+                                    <h3> F </h3>
+                                    <h3> S </h3>    
+                                </div>
+                                <ul class="month-days current-month-days">
+                                    
+                                </ul>
+                            </div>
+                            <div class="next">
+                                <h2 class="month next-month">
+                                     <!--rendered by js  -->
+                                </h2>
+                                <div class="days-of-week">
+                                    <h3> S </h3>
+                                    <h3> M </h3>
+                                    <h3> T </h3>
+                                    <h3> W </h3>
+                                    <h3> T </h3>
+                                    <h3> F </h3>
+                                    <h3> S </h3>    
+                                </div>
+                                <ul class="month-days next-month-days">
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="bottom flex">
+                        <p> Search for return </p>
+                        <button class="apply-btn"> Apply </button>
+                    </div>
+                </div>
+                <div class="date-parent clic-sun">
+                    <h2 class="calender-for"> Return </h2>
                     <div class="upper">
                         <button class="return-btn flex">
                             <span> Return </span>
@@ -153,10 +196,10 @@
             </div>
             <div class="parent">
                 <div class="search-field">
-                    <input type="search" placeholder="1 Adult, Econonmy">
+                    <input type="search" class="trav-inp clickable" placeholder="1 Adult, Econonmy">
                     <p class="text-in-input"> Travellers,cabin class </p>
                 </div>
-                <div class="trav">
+                <div class="trav clic-sun">
                     <h3> Cabin class </h3>
                     <div class="med">
                         <div class="adult flex">
@@ -165,9 +208,9 @@
                                 <p> Aged 16+ </p>
                             </div>
                             <div class="adult-right flex">
-                                <button> - </button>
-                                <p class="num"> 1 </p>
-                                <button> + </button>
+                                <button class="adult-sub-btn sub-btn"> - </button>
+                                <p class="adult-num num" > 1 </p>
+                                <button class="adult-add-btn add-btn"> + </button>
                             </div>
                         </div>
                         <div class="child flex">
@@ -176,9 +219,9 @@
                                 <p> Aged 0 to 15 </p>
                             </div>
                             <div class="child-right flex">
-                                <button> - </button>
-                                <p class="num"> 0 </p>
-                                <button> + </button>
+                                <button class="child-sub-btn sub-btn"> - </button>
+                                <p class="child-num num"> 0 </p>
+                                <button class="child-add-btn add-btn"> + </button>
                             </div>
                         </div>
                     </div>
